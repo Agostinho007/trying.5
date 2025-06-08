@@ -1,0 +1,21 @@
+{
+  "name": "trying.5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "keywords": [],
+  "author": "PAIN",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "ws": "^8.18.2"
+  }
+}

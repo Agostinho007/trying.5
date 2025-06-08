@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #chat {
+            border : 1px solid #ccc;
+            padding : 10px;
+            height:300px ;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        #chat div {
+            margin: 5px 0;
+        }
+
+        #formMensagem {
+            display: flex;
+            gap: 10 px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="chat">
+
+    </div>
+
+    <form action="" id="formMensagem">
+        <input type="text" placeholder="Nome" id="usuario" name="usuario" required>
+        <input type="text" id="texto" placeholder="Mensagem" name="texto" required>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        const ws = new WebSocket('ws://localhost:3001');
+
+        ws.onopen = () => {
+            console.log('Conectado com o Servidor WebSocket');
+        }
+
+        ws.onmessage = (event) => {
+            const dados = JSON.parse(event.data);
+            const chat = document.getElementById('chat');
+
+            if (dados.tipo === 'historico') {
+                dados.mensagens.forEach((mensagem) => {
+                    const div = document.createElement('div');
+                    div.textContent = `[${mensagem.timestamp}] ${mensagem.usuario}: ${mensagem.texto}`;
+                    chat.appendChild(div);  
+                });
+                
+            } else if (dados.tipo === 'novaMensagem') {
+                const div = document.createElement('div');
+                div.textContent = `[${dados.mensagem.timestamp}] ${dados.mensagem.usuario}: ${dados.mensagem.texto}`;
+                chat.appendChild(div);
+                chat.scrollTop = chat.scrollHeight;
+            }
+        };
+
+        ws.onerror = () =>{
+            console.error('Erro no WebSocket', error);
+        };
+
+        ws.onclose = () => {
+            console.log('Conexao Fechada');
+        };
+
+        document.getElementById('formMensagem').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const usuario = document.getElementById('usuario').value;
+        const texto = document.getElementById('texto').value;
+        ws.send(JSON.stringify({usuario, texto}));
+        document.getElementById('texto').value = '';
+        });
+    </script>
+    
+</body>
+</html>

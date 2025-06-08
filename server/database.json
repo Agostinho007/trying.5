@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Mulcia",
+      "idade": 18,
+      "cidade": "Maputo"
+    },
+    {
+      "id": 1749382183601,
+      "name": "Mussaldyne Rhey",
+      "idade": 19,
+      "cidade": "Pemba"
+    },
+    {
+      "id": 1749382220225,
+      "name": "Anastacia Osmondi",
+      "idade": 19,
+      "cidade": "Pemba"
+    },
+    {
+      "id": 1749382343145,
+      "name": "Jose Mickey",
+      "idade": 19,
+      "cidade": "Pemba"
+    },
+    {
+      "id": 1749403650763,
+      "name": "sDSD",
+      "idade": 19,
+      "cidade": "Pemba"
+    }
+  ],
+  "mensagens": [
+    {
+      "id": 1749407279592,
+      "texto": "oi",
+      "usuario": "Agostinho",
+      "timestamp": "2025-06-08T18:27:59.593Z"
+    },
+    {
+      "id": 1749407745876,
+      "texto": "oie",
+      "usuario": "Curry",
+      "timestamp": "2025-06-08T18:35:45.876Z"
+    },
+    {
+      "id": 1749408594018,
+      "texto": "oie",
+      "usuario": "Curry",
+      "timestamp": "2025-06-08T18:49:54.018Z"
+    },
+    {
+      "id": 1749408606695,
+      "texto": "oi",
+      "usuario": "Agostinho",
+      "timestamp": "2025-06-08T18:50:06.695Z"
+    },
+    {
+      "id": 1749408628343,
+      "texto": "n b",
+      "usuario": "Curry",
+      "timestamp": "2025-06-08T18:50:28.343Z"
+    }
+  ]
+}

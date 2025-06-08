@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            padding: 200px;
+            border: 1px seashell;
+            background-color: whitesmoke;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        button{
+            background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
+            padding: 12px;
+            border-radius: 7px;
+            border: 1px white;
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        form input{
+            padding: 10px;
+            border: 1px black;
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="" id="formUser">
+
+        <label for="">Nome</label><input type="text" id="name" placeholder="Insira o nome aqui" required>
+
+        <label for="">Idade</label><input type="text" id="idade" placeholder="Insira a sua idade aqui" required>
+
+        <label for="">Cidade</label><input type="text" id="cidade" placeholder="Insira a sua cidade aqui" required>
+
+        <button type="submit">Enviar</button>
+
+    </form>
+
+    <div>
+        <p id="alert"></p>
+    </div>
+
+    <div class="content">
+        <p>Os Users irao aparecer aqui</p>
+        <ul id="lista"></ul>
+        <button onclick="carregarUsers()">Buscar Users</button>
+    </div>
+
+    <div>
+        <a href="chat.html">Ir para o Chat</a>
+    </div>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
