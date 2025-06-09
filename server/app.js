@@ -12,7 +12,7 @@ application.use(cors({
     origin: ' * ',
 }))
 
-const wss = new WebSocket.Server({port: process.env.PORT})
+const wss = new WebSocket.Server({port: process.env.PORT||3000})
 
 function lerDados(){
     try {
