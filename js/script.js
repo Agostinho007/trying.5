@@ -9,7 +9,7 @@ document.getElementById('formUser').addEventListener('submit', async function(ev
     }
 
     try {
-        const responsee = await fetch ('http://localhost:3000/api/users', {
+        const responsee = await fetch (`http://${window.location.hostname}/api/users`, {
             method: 'post', 
             headers: {
                 'Content-Type': 'application/json'
