@@ -37,10 +37,10 @@
     </form>
 
     <script>
-        
+
         const wsUrl = window.location.hostname.includes('onrender.com')
         ? `wss://${window.location.hostname}`
-        : `ws://localhost:3001`;
+        : `ws://localhost:3000`;
 
         const ws = new WebSocket(wsUrl);
 
