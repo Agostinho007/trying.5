@@ -37,7 +37,12 @@
     </form>
 
     <script>
-        const ws = new WebSocket('ws://localhost:3001');
+        
+        const wsUrl = window.location.hostname.includes('onrender.com')
+        ? `wss://${window.location.hostname}`
+        : `ws://localhost:3001`;
+
+        const ws = new WebSocket(wsUrl);
 
         ws.onopen = () => {
             console.log('Conectado com o Servidor WebSocket');

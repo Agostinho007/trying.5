@@ -12,7 +12,7 @@ application.use(cors({
     origin: ' * ',
 }))
 
-const wss = new WebSocket.Server({port: 3001})
+const wss = new WebSocket.Server({server})
 
 function lerDados(){
     try {
@@ -79,6 +79,6 @@ application.post('/api/users', (req, res) => {
     }
 })
 
-application.listen(PORT, () => {
+const server = application.listen(PORT, () => {
     console.log(`Server ON in port ${PORT} `);
 })
